@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Vocabulary.com 查词插件",
+  "version": "1.0",
+  "description": "从vocabulary.com获取英语单词解释",
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+    "contextMenus",
+    "https://www.vocabulary.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": ["content.js"]
+}
